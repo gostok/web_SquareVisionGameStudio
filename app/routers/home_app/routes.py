@@ -18,10 +18,6 @@ from fastapi.staticfiles import StaticFiles
 @router_home.get("/", response_class=HTMLResponse)
 async def get_home(request: Request, db: Session = Depends(get_db)):
     blog_posts = db.query(BlogPost).order_by(BlogPost.published_at.desc()).all()
-    for post in blog_posts:
-        print(
-            f"Post ID: {post.id}, Image URL: {post.image_url}"
-        )  # Отладочное сообщение
     context = {
         "request": request,
         "blog_posts": blog_posts,

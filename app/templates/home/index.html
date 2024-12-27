@@ -39,9 +39,9 @@
             2 of 2
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-4 mb-4">
         <div class="col">
-            
+            <h2> Что-то </h2>
         </div>
         
         <div class="col">
@@ -61,6 +61,8 @@
                     <h5 class="card-title">{{ post.title }}</h5>
                     <p class="card-text">{{ post.content.split('.')[0] }}.</p> <!-- Первое предложение -->
                     <p class="full-text">{{ post.content }}</p> <!-- Полный текст, скрыт изначально -->
+                    <p class="card-text">{{ post.published_at }}</p>
+                    <p class="card-text">{{ post.username }}</p>
                     <button class="btn btn-primary toggle-btn" onclick="toggleText(this)">Открыть</button>
                 </div>
             </div>

@@ -30,15 +30,15 @@ class BlogPost(Base):
     content = Column(Text, nullable=False)
     image_url = Column(String, nullable=True)
     published_at = Column(DateTime(timezone=True), server_default=func.now())
-    user_id = Column(String, ForeignKey("users.id"), nullable=False)
+    username = Column(String, ForeignKey("users.username"), nullable=False)
 
     user = relationship("User")
 
-    def __init__(self, title: str, content: str, image_url: str, user_id: str):
+    def __init__(self, title: str, content: str, image_url: str, username: str):
         self.title = title
         self.content = content
         self.image_url = image_url
-        self.user_id = user_id
+        self.username = username
 
     @property
     def image(self):
