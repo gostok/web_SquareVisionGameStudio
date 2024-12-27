@@ -13,7 +13,6 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 templates = Jinja2Templates(directory="app/templates")
 app.mount("/static", StaticFiles(directory="app/static", html=True), name="static")
-app.mount("/uploads", StaticFiles(directory="database/uploads"), name="uploads")
 
 
 app.include_router(router_home, prefix="", tags=["home"])
