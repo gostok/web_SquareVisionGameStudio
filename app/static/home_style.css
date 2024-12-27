@@ -1,0 +1,5 @@
+#carouselExampleIndicators .carousel-inner {
+    border: 0px solid rgba(100, 100, 100, 1);
+    border-radius: 20px;
+    box-shadow: 0px 0px 45px 25px rgba(2, 50, 2, 0.6);
+}
